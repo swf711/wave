@@ -1,49 +1,69 @@
-/*header*/
-.brand
-  position: fixed
-  top: 30px
-  left: 30px
-  font-size: $font_base_size*4
-  color: $color_black
-  &:hover, &:focus
+#app
+  header, footer
+    z-index: 99
+
+  /*header*/
+  .brand
+    position: fixed
+    top: 30px
+    left: 30px
+    font-size: $font_base_size*4
     color: $color_black
-    text-decoration: none
+    &:hover, &:focus
+      color: $color_black
+      text-decoration: none
 
-#nav
-  padding: 30px
-  a
-    font-weight: bold
-    color: #2c3e50
-    &.router-link-exact-active
-      color: #42b983
+  nav
+    display: flex
+    position: fixed
+    top: 30px
+    left: calc(100% - 30px)
+    transition: .5s
+    transform: rotate(90deg)
+    transform-origin: 0 0
+    a
+      font-size: $font_base_size*2.5
+      line-height: $font_base_size*2.5
+      & + a
+        margin-left: 1.5rem
+      &::before
+        content: ''
+        position: absolute
+        width: 105%
+        height: 55%
+        transform: translate(10%,0%)
+        transition: .2s
+        z-index: -1
+      &:hover::before, &.router-link-exact-active::before
+        transform: translate(-2.5%,110%)
 
-.mode-select
-  display: flex
-  justify-content: center
-  align-items: center
-  position: fixed
-  left: 30px
-  bottom: 30px
-  width: 30px
-  height: 50px
-  border-radius: 50cm
-  background: $color_gray
-  .select-button
-    position: absolute
-    top: 5px
-    width: 20px
-    height: 20px
-    border-radius: 50%
-    background: $color_white
+  .mode-select
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    left: 30px
+    bottom: 30px
+    width: 30px
+    height: 50px
+    border-radius: 50cm
+    background: $color_gray
+    .select-button
+      position: absolute
+      top: 5px
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      background: $color_white
 
-.copyright
-  display: flex
-  flex-direction: column
-  position: fixed
-  right: 30px
-  bottom: 30px
-  line-height: $font_base_size*2.5
-  span:nth-of-type(1)
-    font-size: $font_base_size*3
-  span:nth-of-type(2)
-    font-size: $font_base_size*2
+  .copyright
+    display: flex
+    flex-direction: column
+    position: fixed
+    right: 30px
+    bottom: 30px
+    line-height: $font_base_size*2.5
+    span:nth-of-type(1)
+      font-size: $font_base_size*3
+    span:nth-of-type(2)
+      font-size: $font_base_size*2

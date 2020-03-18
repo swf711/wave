@@ -1,0 +1,12 @@
+#app .container
+	color: $color_black
+
+
+#app nav
+	display: flex
+	a
+	  color: $color_black
+	  &:before
+	  	background: $color_white
+	  &:hover::before, &.router-link-exact-active::before
+	  	background: $color_gray

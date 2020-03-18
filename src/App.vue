@@ -3,8 +3,6 @@
     header
       a.brand(href="/") brian shao
       nav
-        router-link(to="/") Home
-        | |
         router-link(to="/about") about
         router-link(to="/works") works
         router-link(to="/contact") contact
@@ -24,8 +22,4 @@
   export default {}
 </script>
 
-<style lang="sass">
-
-  
-      
-</style>
+<style lang="sass"></style>
