@@ -1,0 +1,49 @@
+/*header*/
+.brand
+  position: fixed
+  top: 30px
+  left: 30px
+  font-size: $font_base_size*4
+  color: $color_black
+  &:hover, &:focus
+    color: $color_black
+    text-decoration: none
+
+#nav
+  padding: 30px
+  a
+    font-weight: bold
+    color: #2c3e50
+    &.router-link-exact-active
+      color: #42b983
+
+.mode-select
+  display: flex
+  justify-content: center
+  align-items: center
+  position: fixed
+  left: 30px
+  bottom: 30px
+  width: 30px
+  height: 50px
+  border-radius: 50cm
+  background: $color_gray
+  .select-button
+    position: absolute
+    top: 5px
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    background: $color_white
+
+.copyright
+  display: flex
+  flex-direction: column
+  position: fixed
+  right: 30px
+  bottom: 30px
+  line-height: $font_base_size*2.5
+  span:nth-of-type(1)
+    font-size: $font_base_size*3
+  span:nth-of-type(2)
+    font-size: $font_base_size*2
