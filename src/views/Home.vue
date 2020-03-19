@@ -1,8 +1,12 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+	section.home
+		.visual-logo
+			.wave.-one
+			.wave.-two
+			.wave.-three
+			.title Wave
+		p Portfolio of<br>a Web Developer with 
+			span Renaissance Soul.
 </template>
 
 <script>

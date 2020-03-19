@@ -1,0 +1,49 @@
+.home
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	height: calc(100vh - 100px)
+	.visual-logo
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 50vh
+		height: 50vh
+		background: radial-gradient(rgba($color_bluegreen, 1),rgba(#74d3d8, 0) 50%, rgba(white, 0.5))
+	.title
+		font-size: $font_base_size*5
+		font-family: 'Raleway', 'Noto Sans TC', 微軟正黑體, sans-serif
+		letter-spacing: 12px
+		text-transform: uppercase
+		text-shadow: 0 1px 0 rgba(black, 0.1)
+	p
+		font-size: $font_base_size*2.5
+
+.wave
+	width: 45vh
+	height: 45vh
+	opacity: 0.4
+	position: absolute
+	background: $color_bluegreen
+	border-radius: 45%
+	transform-origin: 50% 48%
+	transition: left 2s
+	animation: drift 3000ms infinite linear
+	&.-three
+	  animation: drift 3500ms infinite linear
+	&.-two
+	  animation: drift 5000ms infinite linear
+	  background-color: yellow
+	  opacity: 0.1
+
+@keyframes drift
+	from
+  	transform: rotate(0deg)
+	from
+  	transform: rotate(360deg)
+
+
+@media (max-width: 1200px)
+	.home
+		margin-right: 55px

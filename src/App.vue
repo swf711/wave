@@ -1,12 +1,12 @@
 <template lang="pug">
   #app
     header
-      a.brand(href="/") brian shao
+      router-link.brand(to="/") brian shao
       nav
         router-link(to="/about") about
         router-link(to="/works") works
         router-link(to="/contact") contact
-    .container
+    main.container
       router-view
     footer
       .mode-select
@@ -21,5 +21,3 @@
 
   export default {}
 </script>
-
-<style lang="sass"></style>
