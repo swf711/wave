@@ -14,10 +14,25 @@
       .copyright
         span ©2020
         span brian shao
+    #cursorC
+    #cursorP
 </template>
 
 <script>
   import './assets/css/app.sass'
 
-  export default {}
+  export default{}
+
+  let xPosition = 0, yPosition = 0;
+  document.addEventListener('mousemove', function(e){
+    xPosition = e.clientX;
+    yPosition = e.clientY;
+
+    updateCursorPos();
+  })
+
+  function updateCursorPos(){
+    document.getElementById('cursorC').style.cssText = `top: ${yPosition}px; left: ${xPosition}px;`;
+    document.getElementById('cursorP').style.cssText = `top: ${yPosition}px; left: ${xPosition}px;`;
+  }
 </script>

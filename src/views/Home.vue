@@ -1,6 +1,6 @@
 <template lang="pug">
 	section.home
-		.visual-logo
+		#visual-logo
 			.wave.-one
 			.wave.-two
 			.wave.-three
@@ -10,13 +10,15 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  // let xPosition = 0, yPosition = 0;
+  // document.addEventListener('mousemove', function(e){
+  //   xPosition = e.clientX/50;
+  //   yPosition = e.clientY/50;
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  //   updateWave();
+  // })
+
+  // function updateWave(){
+  //   document.getElementById('visual-logo').style.cssText = `transform: translate(-${xPosition}px,-${yPosition}px);`;
+  // }
 </script>
