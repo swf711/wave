@@ -30,7 +30,7 @@
     }
     timeout = window.requestAnimationFrame(() => {
       [].forEach.call(document.querySelectorAll(".cursorC,.cursorP"), (item) => {
-        item.style.cssText = `top: ${y}px; left: ${x}px;`;
+        item.style.transform = `translate(${x}px, ${y}px)`;
       });
     })
   })
