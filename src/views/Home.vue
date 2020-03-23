@@ -10,7 +10,7 @@
 </template>
 
 <script>
-	const range = 80;
+	const range = 100;
 	let timeout;
 	const calcValue = (a, b) => (a/b*range-range/2).toFixed(1);
 
