@@ -4,7 +4,7 @@
 	align-items: center
 	flex-direction: column
 	height: calc(100vh - 100px)
-	#visual-logo
+	.visual-logo
 		display: flex
 		justify-content: center
 		align-items: center
@@ -15,12 +15,14 @@
 		background: radial-gradient(rgba($color_bluegreen, 1),rgba(#74d3d8, 0) 50%, rgba(white, 0.5))
 		transition: all 0.5s ease-out
 	.title
+		position: fixed
 		font-size: $font_base_size*5
 		font-family: 'Raleway', 'Noto Sans TC', 微軟正黑體, sans-serif
 		font-weight: bold
 		letter-spacing: 12px
 		text-transform: uppercase
 		text-shadow: 0 1px 0 rgba(black, 0.1)
+		transform: translateY(-50px)
 	p
 		font-size: $font_base_size*2.5
 
@@ -32,7 +34,6 @@
 	background: $color_bluegreen
 	border-radius: 45%
 	transform-origin: 50% 48%
-	transition: left 2s
 	animation: drift 3000ms infinite linear
 	&.-three
 	  animation: drift 3500ms infinite linear

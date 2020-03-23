@@ -14,8 +14,8 @@
       .copyright
         span ©2020
         span brian shao
-    #cursorC
-    #cursorP
+    .cursorC
+    .cursorP
 </template>
 
 <script>
@@ -23,16 +23,15 @@
 
   export default{}
 
-  let xPosition = 0, yPosition = 0;
-  document.addEventListener('mousemove', function(e){
-    xPosition = e.clientX;
-    yPosition = e.clientY;
-
-    updateCursorPos();
+  let timeout;
+  document.addEventListener('mousemove',({x,y}) => {
+    if (timeout) {
+      window.cancelAnimationFrame(timeout);
+    }
+    timeout = window.requestAnimationFrame(() => {
+      [].forEach.call(document.querySelectorAll(".cursorC,.cursorP"), (item) => {
+        item.style.cssText = `top: ${y}px; left: ${x}px;`;
+      });
+    })
   })
-
-  function updateCursorPos(){
-    document.getElementById('cursorC').style.cssText = `top: ${yPosition}px; left: ${xPosition}px;`;
-    document.getElementById('cursorP').style.cssText = `top: ${yPosition}px; left: ${xPosition}px;`;
-  }
 </script>
