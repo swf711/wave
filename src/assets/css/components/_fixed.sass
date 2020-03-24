@@ -8,6 +8,7 @@
     top: 50px
     left: 8%
     font-size: $font_base_size*4
+    line-height: $font_base_size*4
     color: $color_black
     &:hover, &:focus
       color: $color_black
@@ -90,3 +91,14 @@
     z-index: 9998
     &.hover
       background: #000
+
+@media (max-width: 768px)
+  #app
+    .brand
+      top: 5%
+      left: 15px
+    nav
+      top: 5%
+      left: calc(100% - 15px)
+    .cursorC, .cursorP, .mode-select, .copyright
+      display: none
