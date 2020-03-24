@@ -1,22 +1,31 @@
-#app .container
-	color: $color_black
+html
+	body
+		background: #fff
+	#app
+		.container
+			color: $color_black
+		.brand
+			color: $color_black
+			&:hover, &:focus
+				color: $color_black
+		nav a
+		  color: $color_black
+		  &:before
+		  	background: $color_white
+		  &:hover::before, &.router-link-exact-active::before
+		  	background: $color_gray
+		.copyright
+			color: $color_black
+		  	
+	.cursorC
+		border: 4px solid $color_white
 
-#app nav
-	display: flex
-	a
-	  color: $color_black
-	  &:before
-	  	background: $color_white
-	  &:hover::before, &.router-link-exact-active::before
-	  	background: $color_gray
-	  	
-.cursorC
-	border: 4px solid $color_white
-
-.home
-	.title
-		color: $color_white
-	p
-		color: $color_gray
-		span
-			color: $color_bluegreen
+	.home
+		.visual-logo
+			background: radial-gradient(rgba($color_bluegreen, 1),rgba(#74d3d8, 0) 50%, rgba(white, 0.5))
+		.title
+			color: $color_white
+		p
+			color: $color_gray
+			span
+				color: $color_bluegreen

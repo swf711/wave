@@ -9,8 +9,11 @@
     main.container
       router-view
     footer
-      .mode-select
-        .select-button
+      .mode-toggle
+        input#switch(type="checkbox" name="mode")
+        label.toggle-button(for="switch")
+          font-awesome-icon(icon="moon")
+          font-awesome-icon(icon="sun")
       .copyright
         span ©2020
         span brian shao
@@ -23,15 +26,35 @@
 
   export default{}
 
-  let timeout;
-  document.addEventListener('mousemove',({x,y}) => {
-    if (timeout) {
-      window.cancelAnimationFrame(timeout);
-    }
-    timeout = window.requestAnimationFrame(() => {
-      [].forEach.call(document.querySelectorAll(".cursorC,.cursorP"), (item) => {
-        item.style.transform = `translate(${x}px, ${y}px)`;
-      });
+  window.onload = function(){
+
+    let timeout;
+    document.addEventListener('mousemove',({x,y}) => {
+      if (timeout) {
+        window.cancelAnimationFrame(timeout);
+      }
+      timeout = window.requestAnimationFrame(() => {
+        [].forEach.call(document.querySelectorAll(".cursorC,.cursorP"), (item) => {
+          item.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      })
     })
-  })
+
+    document.querySelector('input[name=mode]').addEventListener('change', function(){
+      if(this.checked){
+        trans();
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        trans();
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })
+
+    let trans = () => {
+      document.documentElement.classList.add('transition');
+      window.setTimeout(() => {
+        document.documentElement.classList.remove('transition');
+      }, 1000)
+    }
+  }
 </script>

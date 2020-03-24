@@ -9,9 +9,7 @@
     left: 8%
     font-size: $font_base_size*4
     line-height: $font_base_size*4
-    color: $color_black
     &:hover, &:focus
-      color: $color_black
       text-decoration: none
 
   nav
@@ -38,24 +36,42 @@
         transform: translate(-2.5%,110%)
 
   /* footer */
-  .mode-select
-    display: flex
-    justify-content: center
-    align-items: center
-    position: fixed
-    left: 8%
-    bottom: 50px
-    width: 30px
-    height: 50px
-    border-radius: 50cm
-    background: $color_gray
-    .select-button
-      position: absolute
-      top: 5px
-      width: 20px
-      height: 20px
-      border-radius: 50%
-      background: $color_white
+  .mode-toggle
+    input
+      display: none
+      &:checked + .toggle-button
+        background: $color_bluegreen
+        &::after
+          top: calc(100% - 5px)
+          transform: translateY(-100%)
+    .toggle-button
+      display: flex
+      justify-content: center
+      align-items: center
+      position: fixed
+      left: 8%
+      bottom: 50px
+      width: 30px
+      height: 60px
+      color: $color_white
+      border-radius: 50cm
+      background: $color_gray
+      &::after
+        content: ''
+        position: absolute
+        top: 5px
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        background: $color_white
+        transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 420ms
+      svg
+        position: absolute
+        opacity: .4
+        &:nth-of-type(1)
+          top: 7px
+        &:nth-of-type(2)
+          bottom: 7px
 
   .copyright
     display: flex
@@ -79,7 +95,7 @@
     left: -30px
     width: 60px
     height: 60px
-    transition: all 0.2s ease-out
+    transition: all 0.2s ease-out!important
     mix-blend-mode: difference
     z-index: 9999
   .cursorP
@@ -88,6 +104,7 @@
     width: 8px
     height: 8px
     background: $color_bluegreen
+    transition: none!important
     z-index: 9998
     &.hover
       background: #000
