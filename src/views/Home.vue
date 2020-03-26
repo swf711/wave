@@ -7,6 +7,7 @@
 		.title Wave
 		p Portfolio of<br>a Web Developer with 
 			span Renaissance Soul.
+		img.about-pre(src="../assets/images/profile-image-border.png")
 </template>
 
 <script>
@@ -21,7 +22,9 @@
 	  timeout = window.requestAnimationFrame(() => {
 	    const xValue = calcValue(x,window.innerWidth);
 	    const yValue = calcValue(y,window.innerHeight);
-	    document.querySelector('.visual-logo').style.transform = `translate(${-xValue*.45}px,${-yValue*.45}px)`;
+	    if(document.querySelector('.visual-logo')){
+	    	document.querySelector('.visual-logo').style.transform = `translate(${-xValue*.45}px,${-yValue*.45}px)`;
+	  	}
 	  })
 	})
 </script>

@@ -56,5 +56,27 @@
         document.documentElement.classList.remove('transition');
       }, 1000)
     }
+
+    const wTargets = document.querySelectorAll('#app a, #app label')
+    for (const wTarget of wTargets) {
+      wTarget.addEventListener('mouseover', function(){
+        document.querySelector('.cursorC').classList.add('hover');
+      })
+
+      wTarget.addEventListener('mouseout', function(){
+        document.querySelector('.cursorC').classList.remove('hover');
+      })
+    }
+
+    wTargets[1].addEventListener('mouseover', function(){
+      if(document.querySelector('.home')){
+        document.querySelector('.about-pre').classList.add('show');
+      }
+    })
+    wTargets[1].addEventListener('mouseout', function(){
+      if(document.querySelector('.home')){
+        document.querySelector('.about-pre').classList.remove('show');
+      }
+    })
   }
 </script>

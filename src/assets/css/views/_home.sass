@@ -24,6 +24,16 @@
 		transform: translateY(-50px)
 	p
 		font-size: $font_base_size*2.5
+	.about-pre
+		position: fixed
+		top: 0
+		right: 50%
+		height: 100vh
+		opacity: 0
+		z-index: -1
+		&.show
+			animation: fadeOut .8s ease-in-out 0s 1 reverse
+			animation-fill-mode: forwards
 
 .wave
 	width: 45vh
