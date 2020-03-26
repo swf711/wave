@@ -1,7 +1,8 @@
 <template lang="pug">
 	section.about
-		img(alt="Vue logo" src="../assets/logo.png")
-		HelloWorld(msg="Welcome to Your Vue.js App")
+		img.about-img(src="../assets/images/profile-image.jpg")
+		img.about-img-bd(src="../assets/images/profile-image-border.png")
+		//- HelloWorld(msg="Welcome to Your Vue.js App")
 </template>
 
 <script>
