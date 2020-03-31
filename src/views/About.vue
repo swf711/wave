@@ -12,16 +12,18 @@
 				| always trying to make <br>
 				| intresting interactive web page.
 			.title EXPERIENCE
-			.exp 輔仁大學資訊管理系畢業<br>
+			p 資訊管理系畢業<br>
 				| BACHELOR IN INFORMATION MANAGEMENT
-				.company 2012 - 2016｜Fu Jen Catholic Unuversity
-			.exp 網路行銷企劃<br>
+				.sm-gray 2012 - 2016｜Fu Jen Catholic Unuversity
+			p 網路行銷企劃<br>
 				| INTERNET MARKETING PERSONNEL
-				.company 2016 - 2017｜你最大行銷公司
-			.exp 網頁設計師<br>
+				.sm-gray 2016 - 2017｜你最大行銷公司
+			p 網頁設計師<br>
 				| WEB DESIGNER
-				.company 2017 - 2020｜佳音英語總公司
+				.sm-gray 2017 - 2020｜佳音英語總公司
 			.title SKILLS
+			p [Photoshop, Illustrator, HTML 5, CSS, JavaScript, Jquery, PHP, Pug / Sass, Web Design, Visual Design, ]
+
 		//- HelloWorld(msg="Welcome to Your Vue.js App")
 </template>
 
