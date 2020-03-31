@@ -6,7 +6,31 @@
 		height: 100vh
 		z-index: -1
 	.about-img
-		animation: leftToMiddle .5s ease-in 0s 1 normal
-	.about-img-bd
-		animation: fadeOut 1s ease-in-out .4s 1 normal
+		right: 100%
+		animation: leftToMiddle .5s ease-in .4s 1 normal
 		animation-fill-mode: forwards
+	.about-img-bd
+		animation: fadeOut 1s ease-in-out .8s 1 normal
+		animation-fill-mode: forwards
+
+	.content
+		border: 1px solid #000
+		width: 50%
+		left: 50%
+		padding: 30px 30px
+		text-align: left
+	h1
+		font-size: $font_base_size*3
+		font-weight: bold
+		span
+			color: $color_bluegreen
+	h3
+		font-size: $font_base_size*2
+	.title
+		font-size: $font_base_size*1.5
+		color: $color_bluegreen
+		margin: 4rem 0 2rem
+	.exp + .exp
+		margin-top: 2rem
+	.company
+		color: $color_gray
