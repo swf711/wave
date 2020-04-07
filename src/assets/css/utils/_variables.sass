@@ -7,6 +7,12 @@ $color_black: #383d3b
 // Font-size
 $font_base_size: 10px
 
+@mixin text-longShadow($length: 5,$rgb: $color_bluegreen,$opacity: 1)
+	$all: ()
+	@for $i from 1 through $length
+		$all: append($all, append(#{$i}px #{$i}px 0, rgba($rgb,$opacity)),comma)
+	text-shadow: $all
+
 @keyframes leftToMiddle
 	from
 		right: 100%

@@ -45,8 +45,16 @@
 	.skills
 		p
 			line-height: $font_base_size*3
-		.future span
-			animation: waveText 0.2s infinite alternate
+
+	.future
+		color: $color_white
+		font-size: $font_base_size*4.5
+		font-weight: bold
+		margin-top: 2rem
+		+text-longShadow($length: 1000)
+		z-index: -2
+		span
+		// animation: waveText 0.2s infinite alternate
 
 	.lg-title
 		position: fixed
@@ -58,9 +66,9 @@
 		transform: translate(38px, 15%)
 		z-index: -1
 
-@for $i from 0 to 40
-	.future span:nth-child(#{$i})
-		animation-delay: -#{$i * 100}ms
+// @for $i from 0 to 40
+// 	.lg-title span:nth-child(#{$i})
+// 		animation-delay: -#{$i * 100}ms
 
 @media (max-width: 1200px)
 	.about 
