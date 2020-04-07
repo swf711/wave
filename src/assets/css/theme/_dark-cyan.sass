@@ -1,6 +1,11 @@
 html[data-theme='dark']
 	body
 		background: $color_black
+
+	header
+		background-image: linear-gradient(to bottom, $color_black, transparent)
+	footer
+		background-image: linear-gradient(to top, $color_black, transparent)
 		
 	#app
 		.container
@@ -33,3 +38,10 @@ html[data-theme='dark']
 			color: $color_gray
 			span
 				color: $color_bluegreen
+
+	.about
+		.skills
+			.future
+				color: $color_gray
+		.lg-title
+			color: $color_black

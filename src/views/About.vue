@@ -3,7 +3,8 @@
 		img.about-img(src="../assets/images/profile-image.jpg")
 		img.about-img-bd(src="../assets/images/profile-image-border.png")
 		.content
-
+			.lg-title ABOUT
+			
 			.intro
 				h1 Hi I’m 
 					span Brian Shao 
@@ -33,9 +34,10 @@
 						p HTML5/CSS4/JS<br>Vue.js<br>jQuery<br>Node.js<br>Bootstrap/Material Design<br>Webpack<br>Pug/SASS<br>npm
 					.col-sm-6.col-12
 						p RWD<br>GIT<br>PHP<br>Photoshop<br>Illustrator<br>UX/UI
-							.bottom-title Continuously expanding...
+							.future Continuously expanding...
+
 </template>
 
 <script>
-		// document.querySelector('.bottom-title').innerHTML = document.querySelector('.bottom-title').textContent.replace(/\S/g, "<span>$&</span>");
+		// document.querySelector('.future').innerHTML = document.querySelector('.future').textContent.replace(/\S/g, "<span>$&</span>");
 </script>
