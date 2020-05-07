@@ -17,28 +17,28 @@
       .copyright
         span ©2020
         span brian shao
-    .cursorC
-    .cursorP
+    wave-cursor(:hover-targets="hoverTargets")
 </template>
 
 <script>
   import './assets/css/app.sass'
+  import waveCursor from './components/wave-cursor.vue'
 
-  export default{}
+  export default{
+    data(){
+      return {
+        hoverTargets: []
+      }
+    },
+    components: {
+      'wave-cursor': waveCursor
+    },
+    mounted(){
+      this.hoverTargets = document.querySelectorAll('#app a, #app label');
+    }
+  }
 
   window.onload = function(){
-
-    let timeout;
-    document.addEventListener('mousemove',({x,y}) => {
-      if (timeout) {
-        window.cancelAnimationFrame(timeout);
-      }
-      timeout = window.requestAnimationFrame(() => {
-        [].forEach.call(document.querySelectorAll(".cursorC,.cursorP"), (item) => {
-          item.style.transform = `translate(${x}px, ${y}px)`;
-        });
-      })
-    })
 
     document.querySelector('input[name=mode]').addEventListener('change', function(){
       if(this.checked){
@@ -57,26 +57,5 @@
       }, 1000)
     }
 
-    const wTargets = document.querySelectorAll('#app a, #app label')
-    for (const wTarget of wTargets) {
-      wTarget.addEventListener('mouseover', function(){
-        document.querySelector('.cursorC').classList.add('hover');
-      })
-
-      wTarget.addEventListener('mouseout', function(){
-        document.querySelector('.cursorC').classList.remove('hover');
-      })
-    }
-
-    wTargets[1].addEventListener('mouseover', function(){
-      if(document.querySelector('.home')){
-        document.querySelector('.about-pre').classList.add('show');
-      }
-    })
-    wTargets[1].addEventListener('mouseout', function(){
-      if(document.querySelector('.home')){
-        document.querySelector('.about-pre').classList.remove('show');
-      }
-    })
   }
 </script>
