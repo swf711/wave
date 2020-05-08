@@ -17,7 +17,7 @@
       .copyright
         span ©2020
         span brian shao
-    wave-cursor(:hover-targets="hoverTargets")
+    wave-cursor
 </template>
 
 <script>
@@ -25,16 +25,8 @@
   import waveCursor from './components/wave-cursor.vue'
 
   export default{
-    data(){
-      return {
-        hoverTargets: []
-      }
-    },
     components: {
       'wave-cursor': waveCursor
-    },
-    mounted(){
-      this.hoverTargets = document.querySelectorAll('#app a, #app label');
     }
   }
 
