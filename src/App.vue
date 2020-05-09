@@ -32,6 +32,18 @@
 
   window.onload = function(){
 
+    const navLink = document.querySelectorAll('nav a');
+    navLink[0].addEventListener('mouseover', function(){
+      if(document.querySelector('.home')){
+        document.querySelector('.about-pre').classList.add('show');
+      }
+    })
+    navLink[0].addEventListener('mouseout', function(){
+      if(document.querySelector('.home')){
+        document.querySelector('.about-pre').classList.remove('show');
+      }
+    })
+
     document.querySelector('input[name=mode]').addEventListener('change', function(){
       if(this.checked){
         trans();
