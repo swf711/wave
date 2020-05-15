@@ -23,11 +23,9 @@ export default {
     for (let target of hoverTargets) {
       target.addEventListener('mouseover', function(){
         vm.hover = true;
-        console.log(vm.hover);
       });
       target.addEventListener('mouseout', function(){
         vm.hover = false;
-        console.log(vm.hover);
       });
     }
   },

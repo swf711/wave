@@ -6,8 +6,10 @@
 			.wave.-three
 		.title Wave
 		p Portfolio of<br>a Web Developer with 
-			span Renaissance Soul.
-		img.about-pre(src="../assets/images/profile-image-border.png")
+			span Renaissance Soul. {{navHover}}
+		img.about-pre(:class="{show: navHover === 'about'}" src="../assets/images/profile-image-border.png")
+		img.about-pre(:class="{show: navHover === 'works'}" src="../assets/images/profile-image-border.png")
+		img.about-pre(:class="{show: navHover === 'contact'}" src="../assets/images/profile-image-border.png")
 </template>
 
 <script>
@@ -27,4 +29,14 @@
 	  	}
 	  })
 	})
+
+	export default {
+		props: ['navHover'],
+	  data(){
+	    return {
+	    	active: false,
+	      pre: this.navHover
+	    }
+	  }
+	}
 </script>

@@ -3,14 +3,14 @@
     header
       router-link.brand(to="/") brian shao
       nav
-        router-link(to="/about") about
-        router-link(to="/works") works
-        router-link(to="/contact") contact
+        router-link(to="/about" @mouseover.native="mouseover('about')" @mouseleave.native="mouseover('none')") about
+        router-link(to="/works" @mouseover.native="mouseover('works')" @mouseleave.native="mouseover('none')") works
+        router-link(to="/contact" @mouseover.native="mouseover('contact')" @mouseleave.native="mouseover('none')") contact
     main.container
-      router-view
+      router-view(:nav-hover="navHover")
     footer
       .mode-toggle
-        input#switch(type="checkbox" name="mode")
+        input#switch(type="checkbox" name="mode" @change="check")
         label.toggle-button(for="switch")
           font-awesome-icon(icon="moon")
           font-awesome-icon(icon="sun")
@@ -27,39 +27,32 @@
   export default{
     components: {
       'wave-cursor': waveCursor
+    },
+    data(){
+      return {
+        theme: 'light',
+        navHover: 'none'
+      }
+    },
+    methods: {
+      mouseover: function(target){
+        this.navHover = target
+      },
+      check: function(){
+        if(this.theme === 'light'){
+          document.documentElement.setAttribute('data-theme', 'dark');
+          this.theme = 'dark';
+        }else{
+          document.documentElement.setAttribute('data-theme', 'light');
+          this.theme = 'light';
+        }
+      },
+      // trans: function(){
+      //   document.documentElement.classList.add('transition');
+      //   window.setTimeout(function(){
+      //     document.documentElement.classList.remove('transition');
+      //   }, 1000)
+      // }
     }
-  }
-
-  window.onload = function(){
-
-    const navLink = document.querySelectorAll('nav a');
-    navLink[0].addEventListener('mouseover', function(){
-      if(document.querySelector('.home')){
-        document.querySelector('.about-pre').classList.add('show');
-      }
-    })
-    navLink[0].addEventListener('mouseout', function(){
-      if(document.querySelector('.home')){
-        document.querySelector('.about-pre').classList.remove('show');
-      }
-    })
-
-    document.querySelector('input[name=mode]').addEventListener('change', function(){
-      if(this.checked){
-        trans();
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-        trans();
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })
-
-    let trans = () => {
-      document.documentElement.classList.add('transition');
-      window.setTimeout(() => {
-        document.documentElement.classList.remove('transition');
-      }, 1000)
-    }
-
   }
 </script>
