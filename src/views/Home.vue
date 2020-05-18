@@ -6,10 +6,10 @@
 			.wave.-three
 		.title Wave
 		p Portfolio of<br>a Web Developer with 
-			span Renaissance Soul. {{navHover}}
-		img.about-pre(:class="{show: navHover === 'about'}" src="../assets/images/profile-image-border.png")
-		img.about-pre(:class="{show: navHover === 'works'}" src="../assets/images/profile-image-border.png")
-		img.about-pre(:class="{show: navHover === 'contact'}" src="../assets/images/profile-image-border.png")
+			span Renaissance Soul.
+		img.pre-img.about-img(:class="{show: navHover === 'about'}" src="../assets/images/profile-image-border.png")
+		img.pre-img.works-img(:class="{show: navHover === 'works'}" src="../assets/images/pre_img_works.png")
+		img.pre-img.contact-img(:class="{show: navHover === 'contact'}" src="../assets/images/pre_img_contact.png")
 </template>
 
 <script>

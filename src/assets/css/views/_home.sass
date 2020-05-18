@@ -24,16 +24,25 @@
 		transform: translateY(-50px)
 	p
 		font-size: $font_base_size*2.5
-	.about-pre
+	.pre-img
 		position: fixed
-		top: 0
-		right: 50%
-		height: 100vh
 		opacity: 0
 		z-index: -1
 		&.show
 			animation: fadeOut .8s ease-in-out 0s 1 reverse
 			animation-fill-mode: forwards
+		&.about-img
+			top: 0
+			right: 50%
+			height: 100vh
+		&.works-img
+			top: 0
+			left: 50%
+			height: 100vh
+		&.contact-img
+			top: 0
+			left: 50%
+			height: 100vh
 
 .wave
 	width: 45vh
@@ -61,16 +70,17 @@
 @media (max-width: 1200px)
 	.home
 		margin-right: 55px
-		.about-pre
+		.pre-img
+			transform: translateX(50%)
+		.about-img
 			top: 125px
 			right: 50%
 			width: 50%
 			height: auto
-			transform: translateX(50%)
 
 // @media (max-width: 992px)
 @media (max-width: 768px)
-	.home .about-pre
+	.home .about-img
 		top: 115px
 
 @media (max-width: 576px)
