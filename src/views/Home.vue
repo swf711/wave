@@ -8,7 +8,11 @@
 		p Portfolio of<br>a Web Developer with 
 			span Renaissance Soul.
 		img.pre-img.about-img(:class="{show: navHover === 'about'}" src="../assets/images/profile-image-border.png")
-		img.pre-img.works-img(:class="{show: navHover === 'works'}" src="../assets/images/pre_img_works.png")
+		.pre-img.works-img(:class="{show: navHover === 'works'}")
+			img(src="../assets/images/pre_img_works_1.png")
+			img(src="../assets/images/pre_img_works_2.png")
+			img(src="../assets/images/pre_img_works_3.png")
+			img(src="../assets/images/pre_img_works_4.png")
 		img.pre-img.contact-img(:class="{show: navHover === 'contact'}" src="../assets/images/pre_img_contact.png")
 </template>
 

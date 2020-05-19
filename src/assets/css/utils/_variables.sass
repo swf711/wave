@@ -21,11 +21,29 @@ $font_base_size: 10px
 
 @keyframes fadeOut
 	from
-		opacity: 1
-		filter: blur(0px)
-	to
 		opacity: 0
 		filter: blur(5px)
+	to
+		opacity: 1
+		filter: blur(0px)
+
+@keyframes expand
+	from
+		opacity: 0
+		transform: scale(0.6,1.7) translateY(60px)
+	to
+		opacity: 1
+		transform: scale(1) translateY(0)
+
+@keyframes rotateShow
+	0%
+		opacity: 0
+		transform: rotate(0deg)
+	50%
+		transform: rotate(-15deg)
+	100%
+		opacity: 1
+		transform: rotate(0deg)
 
 @keyframes waveText
 	from

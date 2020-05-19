@@ -26,23 +26,48 @@
 		font-size: $font_base_size*2.5
 	.pre-img
 		position: fixed
-		opacity: 0
 		z-index: -1
-		&.show
-			animation: fadeOut .8s ease-in-out 0s 1 reverse
-			animation-fill-mode: forwards
 		&.about-img
-			top: 0
-			right: 50%
-			height: 100vh
+			top: 135px
+			right: calc(50% + 35px)
+			height: calc(100vh - 135px)
+			opacity: 0
+			&.show
+				animation: fadeOut .8s ease-in-out 0s 1
+				animation-fill-mode: forwards
 		&.works-img
-			top: 0
+			top: 100px
 			left: 50%
-			height: 100vh
+			width: 40vw
+			height: 50vh
+			img
+				position: absolute
+				opacity: 0
+				&:nth-of-type(1)
+					top: 20px
+					left: 0
+					z-index: 1
+				&:nth-of-type(2)
+					top: 140px
+					left: 120px
+				&:nth-of-type(3)
+					top: 70px
+					left: 240px
+				&:nth-of-type(4)
+					top: 250px
+					left: 300px
+			&.show img
+				animation: expand .3s ease-in-out 0s 1
+				animation-fill-mode: forwards
+				opacity: 1
 		&.contact-img
-			top: 0
-			left: 50%
-			height: 100vh
+			top: 50%
+			left: calc(50% + 145px)
+			opacity: 0
+			transform-origin: top left
+			&.show
+				animation: rotateShow .8s ease-in-out 0s 1
+				animation-fill-mode: forwards
 
 .wave
 	width: 45vh
@@ -72,11 +97,11 @@
 		margin-right: 55px
 		.pre-img
 			transform: translateX(50%)
-		.about-img
-			top: 125px
-			right: 50%
-			width: 50%
-			height: auto
+			.about-img
+				top: 125px
+				right: 50%
+				width: 50%
+				height: auto
 
 // @media (max-width: 992px)
 @media (max-width: 768px)

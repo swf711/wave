@@ -2,16 +2,18 @@
 	padding-bottom: 100px
 	.about-img, .about-img-bd
 		position: fixed
-		top: 0
-		right: 50%
-		height: 100vh
 		z-index: -1
 	.about-img
+		top: 0
 		right: 100%
+		height: 100vh
 		animation: leftToMiddle .5s ease-in .4s 1 normal
 		animation-fill-mode: forwards
 	.about-img-bd
-		animation: fadeOut 1s ease-in-out .8s 1 normal
+		top: 135px
+		right: calc(50% + 35px)
+		height: calc(100vh - 135px)
+		animation: fadeOut 1s ease-in-out .8s 1 reverse
 		animation-fill-mode: forwards
 
 	.content
