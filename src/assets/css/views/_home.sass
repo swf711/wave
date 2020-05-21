@@ -28,9 +28,9 @@
 		position: fixed
 		z-index: -1
 		&.about-img
-			top: 135px
-			right: calc(50% + 35px)
-			height: calc(100vh - 135px)
+			top: 0
+			right: calc(50% + 10px)
+			height: 100vh
 			opacity: 0
 			&.show
 				animation: fadeOut .8s ease-in-out 0s 1
@@ -77,36 +77,29 @@
 	background: $color_bluegreen
 	border-radius: 45%
 	transform-origin: 50% 48%
-	animation: drift 3000ms infinite linear
+	animation: logoDrift 3000ms infinite linear
 	&.-three
-	  animation: drift 3500ms infinite linear
+	  animation: logoDrift 3500ms infinite linear
 	&.-two
-	  animation: drift 5000ms infinite linear
+	  animation: logoDrift 5000ms infinite linear
 	  background-color: yellow
 	  opacity: 0.1
 
-@keyframes drift
-	from
-  	transform: rotate(0deg)
-	from
-  	transform: rotate(360deg)
-
-
 @media (max-width: 1200px)
-	.home
-		margin-right: 55px
-		.pre-img
+	.home .pre-img
+		&.about-img
+			top: 120px
+			right: 51%
+			width: 50%
+			height: auto
 			transform: translateX(50%)
-			.about-img
-				top: 125px
-				right: 50%
-				width: 50%
-				height: auto
+		&.works-img, &.contact-img
+			left: 60%
+			transform: translateX(-50%)
 
-// @media (max-width: 992px)
-@media (max-width: 768px)
-	.home .about-img
-		top: 115px
+@media (max-width: 992px)
+	.home .pre-img
+		display: none
 
 @media (max-width: 576px)
 	.home 

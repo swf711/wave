@@ -1,44 +1,60 @@
 <template lang="pug">
-	section.about
-		img.about-img(src="../assets/images/profile-image.jpg")
-		img.about-img-bd(src="../assets/images/profile-image-border.png")
-		.content
-			.lg-title ABOUT
-
-			.intro
-				h1 Hi I’m 
-					span Brian Shao 
-					| !
-				h3 A web designer based in Taipei, Taiwan.<br>
-					| Focused on digital interactive experiences.<br>
-					| Love web & effect designing,<br>
-					| always trying to make <br>
-					| intresting interactive web page.
-
-			.experience
-				.title EXPERIENCE
-				p 資訊管理系畢業<br>
-					| BACHELOR IN INFORMATION MANAGEMENT
-					.sm-gray 2012 - 2016｜Fu Jen Catholic Unuversity
-				p 網路行銷企劃<br>
-					| INTERNET MARKETING PERSONNEL
-					.sm-gray 2016 - 2017｜你最大行銷公司
-				p 網頁設計師<br>
-					| WEB DESIGNER
-					.sm-gray 2017 - 2020｜佳音英語總公司
-
-			.skills
-				.title SKILLS
-				.row
-					.col-sm-6.col-12
-						p HTML5/CSS4/JS<br>Vue.js<br>jQuery<br>Node.js<br>Bootstrap/Material Design<br>Webpack<br>Pug/SASS<br>npm
-					.col-sm-6.col-12
-						p RWD<br>GIT<br>PHP<br>Photoshop<br>Illustrator<br>UX/UI
-
-			.future Continuously Expanding
+	section.works(@mousewheel="wheelScroll")
+		.pages
+			.bn(:class="{active: page === 0}")
+				.bn_top
+					.bn_img
+					h1.title
+						span Explore<br class="hidden-xs"> Kyushu
+				.bn_bottom
+					p Kyushu is the third largest island of Japan and most southwesterly of its four main islands. The island is mountainous, and Japan's most active volcano. The historical regional name Saikaidō referred to its surrounding islands.
+			.bn(:class="{active: page === 1}")
+				.bn_top
+					.bn_img
+					h1.title
+						span Explore<br class="hidden-xs"> Denmark
+				.bn_bottom
+					p Denmark, officially the Kingdom of Denmark, is a sovereign state in Europe. Denmark is a Nordic country and the southernmost of the Scandinavian nations, it is south-west of Sweden and south of Norway.
+			.bn(:class="{active: page === 2}")
+				.bn_top
+					.bn_img
+					h1.title
+						span Explore<br class="hidden-xs"> Xi'an
+				.bn_bottom
+					p Xi'an is the capital of Shaanxi Province, China. A sub-provincial city on the Guanzhong Plain in northwestern China, it is one of the oldest cities in China, and the oldest of the Four Great Ancient Capitals.
+		.mouse.hidden-xs
+			.wheel
 
 </template>
 
 <script>
-		// document.querySelector('.future').innerHTML = document.querySelector('.future').textContent.replace(/\S/g, "<span>$&</span>");
+	export default {
+	  data(){
+	    return {
+	    	page: 0,
+	    	maxPage: 0
+	    }
+	  },
+	  mounted(){
+	  	this.maxPage = document.querySelectorAll('.bn').length;
+	  },
+	  methods: {
+	  	wheelScroll: function(e){
+	  		console.log(e.deltaY)
+		    if(e.deltaY < 0) {
+		      if(this.page > 0){
+		      	this.page--;
+		      }else{
+		      	this.page = this.maxPage - 1;
+		      }
+		    } else if(e.deltaY > 0) {
+		      if(this.page < this.maxPage - 1){
+		      	this.page++;
+		      }else{
+		      	this.page = 0;
+		      }
+		    }
+			}
+	  }
+	}
 </script>
