@@ -22,6 +22,25 @@
 	    width: 100%
 	    height: 100%
 	    transition: .8s cubic-bezier(.5,.74,.86,1.06)
+	  .mouse
+		  position: absolute
+		  bottom: 30px
+		  right: 30px
+		  display: flex
+		  justify-content: center
+		  opacity: 0
+		  width: 25px
+		  height: 40px
+		  border: 3px solid $color_gray
+		  border-radius: 10px 10px 20px 20px
+		  background: $color_white
+		  transition: opacity .6s 1s
+		  .wheel
+		    top: 5px
+		    width: 5px
+		    height: 8px
+		    background: #36b9c1
+		    animation: mouseWheel 1s linear infinite
 	.title
 	  position: absolute
 	  left: 30px
@@ -46,23 +65,6 @@
 	  line-height: 2rem
 	  opacity: 0
 	  transition: opacity .6s 1s
-	.mouse
-	  position: absolute
-	  top: 55px
-	  right: 30px
-	  display: flex
-	  justify-content: center
-	  width: 25px
-	  height: 40px
-	  border: 3px solid $color_gray
-	  border-radius: 10px 10px 20px 20px
-	  background: $color_white
-	  .wheel
-	    top: 5px
-	    width: 5px
-	    height: 8px
-	    background: #36b9c1
-	    animation: mouseWheel 1s linear infinite
 	  
 	/*banner image*/ 
 	.bn:nth-child(1) .bn_img
@@ -79,6 +81,8 @@
 	  opacity: 1
 	  .bn_img:after
 	    width: 0
+	  .mouse
+	  	opacity: 1
 	  .title
 	    opacity: 1
 	    left: 0
@@ -100,16 +104,11 @@
     
 @media (max-width: 768px)
 	.works
-		.hidden-xs
-	    display: none
-		.pages
-			display: flex
-			align-items: center
 	  .bn_top
 	    height: auto
 	    padding-left: 0
 	    .bn_img
-	      height: 40vh
+	      height: 25vh
 	  .title
 	    position: relative
 	    font-size: 2rem
@@ -125,3 +124,5 @@
 	    color: #fff
 	    opacity: 0
 	    transition: .6s 1s
+	  .hidden-xs
+	    display: none
