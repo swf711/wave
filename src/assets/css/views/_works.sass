@@ -48,18 +48,19 @@
 	  transition: opacity .6s 1s
 	.mouse
 	  position: absolute
-	  bottom: 150px
+	  top: 55px
 	  right: 30px
 	  display: flex
 	  justify-content: center
 	  width: 25px
 	  height: 40px
-	  border: 3px solid #fff
+	  border: 3px solid $color_gray
 	  border-radius: 10px 10px 20px 20px
+	  background: $color_white
 	  .wheel
 	    top: 5px
 	    width: 5px
-	    height: 10px
+	    height: 8px
 	    background: #36b9c1
 	    animation: mouseWheel 1s linear infinite
 	  
@@ -99,6 +100,11 @@
     
 @media (max-width: 768px)
 	.works
+		.hidden-xs
+	    display: none
+		.pages
+			display: flex
+			align-items: center
 	  .bn_top
 	    height: auto
 	    padding-left: 0
@@ -119,5 +125,3 @@
 	    color: #fff
 	    opacity: 0
 	    transition: .6s 1s
-	  .hidden-xs
-	    display: none
