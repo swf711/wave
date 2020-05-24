@@ -29,7 +29,7 @@
 
 <script>
 	import lodash from 'lodash';
-	// import Hammer from 'hammer';
+	import Hammer from 'hammerjs';
 	export default {
 	  data(){
 	    return {
@@ -38,19 +38,32 @@
 	    }
 	  },
 	  mounted(){
+	  	var vm = this;
 	  	this.maxPage = document.querySelectorAll('.bn').length;
 
 	  	/* hammer.js */
-			// var myElement = document.querySelector('.works');
-			// var mc = new Hammer(myElement);
+			var myElement = document.querySelector('.works');
+			var mc = new Hammer(myElement);
 
-			// mc.on("swipeleft swiperight", function(e) {
-			//   if(e.type = "swipeleft"){
-			//     previousBn();
-			//   }else if(e.type = "swiperight"){
-			//     nextBn();
-			//   }
-			// });
+			mc.get('swipe').set({
+			  direction: Hammer.DIRECTION_ALL
+			});
+
+			mc.on("swipe", function(e) {
+			  if(e.type = "swipeleft" || "swipeup"){
+		      if(vm.page > 0){
+		      	vm.page--;
+		      }else{
+		      	vm.page = vm.maxPage - 1;
+		      }
+			  }else if(e.type = "swiperight" || "swipedown"){
+		      if(vm.page < vm.maxPage - 1){
+		      	vm.page++;
+		      }else{
+		      	vm.page = 0;
+		      }
+			  }
+			});
 	  },
 	  methods: {
 	  	wheelScroll: lodash.debounce(function(e){
