@@ -28,6 +28,8 @@
 </template>
 
 <script>
+	import lodash from 'lodash';
+	// import Hammer from 'hammer';
 	export default {
 	  data(){
 	    return {
@@ -37,10 +39,21 @@
 	  },
 	  mounted(){
 	  	this.maxPage = document.querySelectorAll('.bn').length;
+
+	  	/* hammer.js */
+			// var myElement = document.querySelector('.works');
+			// var mc = new Hammer(myElement);
+
+			// mc.on("swipeleft swiperight", function(e) {
+			//   if(e.type = "swipeleft"){
+			//     previousBn();
+			//   }else if(e.type = "swiperight"){
+			//     nextBn();
+			//   }
+			// });
 	  },
 	  methods: {
-	  	wheelScroll: function(e){
-	  		console.log(e.deltaY)
+	  	wheelScroll: lodash.debounce(function(e){
 		    if(e.deltaY < 0) {
 		      if(this.page > 0){
 		      	this.page--;
@@ -54,7 +67,7 @@
 		      	this.page = 0;
 		      }
 		    }
-			}
+			}, 150)
 	  }
 	}
 </script>
