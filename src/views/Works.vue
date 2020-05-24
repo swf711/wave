@@ -4,6 +4,8 @@
 			.bn(:class="{active: page === 0}")
 				.bn_top
 					.bn_img
+						.mouse.hidden-xs
+							.wheel
 					h1.title
 						span Explore<br class="hidden-xs"> Kyushu
 				.bn_bottom
@@ -11,6 +13,8 @@
 			.bn(:class="{active: page === 1}")
 				.bn_top
 					.bn_img
+						.mouse.hidden-xs
+							.wheel
 					h1.title
 						span Explore<br class="hidden-xs"> Denmark
 				.bn_bottom
@@ -18,12 +22,14 @@
 			.bn(:class="{active: page === 2}")
 				.bn_top
 					.bn_img
+						.mouse.hidden-xs
+							.wheel
 					h1.title
 						span Explore<br class="hidden-xs"> Xi'an
 				.bn_bottom
 					p Xi'an is the capital of Shaanxi Province, China. A sub-provincial city on the Guanzhong Plain in northwestern China, it is one of the oldest cities in China, and the oldest of the Four Great Ancient Capitals.
-		.mouse.hidden-xs
-			.wheel
+		.pagination
+			.dots(v-for="page in maxPage")
 
 </template>
 
