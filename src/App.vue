@@ -46,13 +46,7 @@
           document.documentElement.setAttribute('data-theme', 'light');
           this.theme = 'light';
         }
-      },
-      // trans: function(){
-      //   document.documentElement.classList.add('transition');
-      //   window.setTimeout(function(){
-      //     document.documentElement.classList.remove('transition');
-      //   }, 1000)
-      // }
+      }
     }
   }
 </script>
