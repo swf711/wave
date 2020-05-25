@@ -39,6 +39,21 @@ export default {
       this.x = e.clientX;
       this.y = e.clientY;
     }
-  }
+  },
+  // watch:{
+  //   $route (to, from){
+  //     const vm = this;
+  //     const hoverTargets = document.querySelectorAll('#app a, #app label');
+  //     for (let target of hoverTargets) {
+  //       target.addEventListener('mouseover', function(){
+  //         vm.hover = true;
+  //       });
+  //       target.addEventListener('mouseout', function(){
+  //         vm.hover = false;
+  //       });
+  //       console.log(hoverTargets);
+  //     }
+  //   }
+  // }
 }
 </script>
