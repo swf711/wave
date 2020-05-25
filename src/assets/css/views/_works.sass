@@ -1,4 +1,6 @@
 .works
+	*
+		// border: 1px solid #000
 	.pages
 		padding-top: 25px
 		height: calc(100vh - 100px)
@@ -8,9 +10,9 @@
 	  opacity: 0
 	  text-align: left
 	.bn_top
-	  position: relative
-	  height: 60vh
-	  padding-left: 15%
+		position: relative
+		height: 60vh
+		padding-left: 10%
 	.bn_img
 	  width: 100%
 	  height: 100%
@@ -22,25 +24,25 @@
 	    width: 100%
 	    height: 100%
 	    transition: .8s cubic-bezier(.5,.74,.86,1.06)
-	  .mouse
-		  position: absolute
-		  bottom: 30px
-		  right: 30px
-		  display: flex
-		  justify-content: center
-		  opacity: 0
-		  width: 25px
-		  height: 40px
-		  border: 3px solid $color_gray
-		  border-radius: 10px 10px 20px 20px
-		  background: $color_white
-		  transition: opacity .6s 1s
-		  .wheel
-		    top: 5px
-		    width: 5px
-		    height: 8px
-		    background: #36b9c1
-		    animation: mouseWheel 1s linear infinite
+	.mouse
+		position: absolute
+		bottom: 10px
+		right: 10px
+		display: flex
+		justify-content: center
+		opacity: 0
+		width: 25px
+		height: 40px
+		border: 3px solid $color_gray
+		border-radius: 10px 10px 20px 20px
+		background: $color_white
+		transition: opacity .6s 1s
+		.wheel
+			top: 5px
+			width: 5px
+			height: 8px
+			background: #36b9c1
+			animation: mouseWheel 1s linear infinite
 	.title
 	  position: absolute
 	  left: 30px
@@ -49,7 +51,7 @@
 	  font-size: 4.25rem
 	  font-weight: normal
 	  margin: 0
-	  padding: 2.5rem 2.5rem 3rem
+	  padding: 2.5rem 2.5rem 3rem 0
 	  text-decoration: underline
 	  color: $color_bluegreen
 	  z-index: 1
@@ -59,7 +61,7 @@
 	.bn_bottom p
 	  overflow: hidden
 	  margin: 1rem 0
-	  padding: 0 25% 0 15%
+	  padding: 0 15% 0 10%
 	  font-size: 1.25rem
 	  font-weight: 300
 	  line-height: 2rem
@@ -71,12 +73,10 @@
 	  background-image: url(http://res.cloudinary.com/swf711/image/upload/v1536039463/%E4%BD%B3%E9%9F%B39%E6%9C%88%E8%99%9F_%E5%88%86%E5%B1%A4_-1_itkktp.jpg)
 	  background-position: center
 	.bn:nth-child(2) .bn_img
-	  background-image: url(http://res.cloudinary.com/swf711/image/upload/v1536132342/Denmark_odgyxb.jpg)
-	  background-position: 0 15%
+	  background-image: url('../images/works_bn_2.png')
 	.bn:nth-child(3) .bn_img
 	  background-image: url(http://res.cloudinary.com/swf711/image/upload/v1536132343/%E5%85%B5%E9%A6%AC%E4%BF%91%E5%B0%81%E9%9D%A2-%E4%BF%AE_couuro.jpg)
 	  
-	/*bn change*/
 	.bn.active
 	  opacity: 1
 	  .bn_img:after
@@ -89,9 +89,31 @@
 	  .bn_bottom p
 	    opacity: .75
 
+	.pagination
+		display: flex
+		flex-direction: column
+		align-items: center
+		font-size: $font_base_size*2
+		width: $font_base_size*2
+		margin-left: 10%
+		transform: translate(-$font_base_size*3, -5px)
+		color: $color_gray
+		span:nth-child(1)
+			color: $color_bluegreen
+
+@media (max-width: 1500px)
+	.works
+		padding: 0 10% 0 8%
+
 @media (max-width: 1200px)
 	.works
 		padding: 0 12% 0 8%
+		.bn_top
+			padding-left: 15%
+		.bn_bottom p
+			padding: 0 10% 0 15%
+		.pagination
+			margin-left: 15%
 
 @media (max-width: 991px)
 	.works
@@ -100,29 +122,44 @@
 	  .bn_bottom p
 		  overflow: hidden
 		  margin: 1rem 0
-		  padding: 0 15%
     
 @media (max-width: 768px)
 	.works
-	  .bn_top
-	    height: auto
-	    padding-left: 0
-	    .bn_img
-	      height: 25vh
-	  .title
-	    position: relative
-	    font-size: 2rem
-	    padding: 1rem 0
-	  .bn_bottom p
-	    height: auto
-	    overflow: hidden
-	    margin: 0 0 1rem
-	    padding: 0
-	    font-size: 1.25rem
-	    font-weight: 300
-	    line-height: 2rem
-	    color: #fff
-	    opacity: 0
-	    transition: .6s 1s
-	  .hidden-xs
-	    display: none
+		padding: 0 50px 0 8%
+		.hidden-xs
+			display: none
+		.bn_top
+			height: auto
+			padding-left: 0
+			.bn_img
+				height: 25vh
+		.mouse
+			width: 18px
+			height: 25px
+			border: 3px solid $color_gray
+			border-radius: 5px
+			.wheel
+				top: 5px
+				width: 4px
+				height: 4px
+				animation: mouseWheel 1s linear infinite reverse
+		.title
+			position: relative
+			font-size: 2rem
+			padding: 1rem 0
+		.bn_bottom p
+			height: auto
+			overflow: hidden
+			margin: 0 0 1rem
+			padding: 0
+			font-size: 1.25rem
+			font-weight: 300
+			line-height: 2rem
+			color: #fff
+			opacity: 0
+			transition: .6s 1s
+		.pagination
+			margin-left: 0
+			font-size: $font_base_size*1
+			width: $font_base_size*1
+			transform: translate(-$font_base_size*2, 0)
