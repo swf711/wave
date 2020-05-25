@@ -4,7 +4,7 @@
 			.bn(:class="{active: page === 0}")
 				.bn_top
 					.bn_img
-						.mouse.hidden-xs
+						.mouse
 							.wheel
 					h1.title
 						span Explore<br class="hidden-xs"> Kyushu
@@ -12,24 +12,26 @@
 					p Kyushu is the third largest island of Japan and most southwesterly of its four main islands. The island is mountainous, and Japan's most active volcano. The historical regional name Saikaidō referred to its surrounding islands.
 			.bn(:class="{active: page === 1}")
 				.bn_top
-					.bn_img
-						.mouse.hidden-xs
+					label.bn_img
+						.mouse
 							.wheel
 					h1.title
-						span Explore<br class="hidden-xs"> Denmark
+						span JOY TO THE <br class="hidden-xs"> WORLD
 				.bn_bottom
-					p Denmark, officially the Kingdom of Denmark, is a sovereign state in Europe. Denmark is a Nordic country and the southernmost of the Scandinavian nations, it is south-west of Sweden and south of Norway.
+					p 佳音英語世界雜誌官網 - 負責網站前端設計及製作<br>Official site for Joy Magazine - Web designing & Front-end develop<br>#Bootstrap #Jquery #Skollr #OwlCarousel #Fancybox #ImageMapResize
 			.bn(:class="{active: page === 2}")
 				.bn_top
 					.bn_img
-						.mouse.hidden-xs
+						.mouse
 							.wheel
 					h1.title
 						span Explore<br class="hidden-xs"> Xi'an
 				.bn_bottom
 					p Xi'an is the capital of Shaanxi Province, China. A sub-provincial city on the Guanzhong Plain in northwestern China, it is one of the oldest cities in China, and the oldest of the Four Great Ancient Capitals.
-		.pagination
-			.dots(v-for="page in maxPage")
+			.pagination
+				span 0{{page + 1}}
+				span |
+				span 0{{maxPage}}
 
 </template>
 
