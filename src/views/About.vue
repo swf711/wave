@@ -38,7 +38,3 @@
 			.future Continuously Expanding
 
 </template>
-
-<script>
-		// document.querySelector('.future').innerHTML = document.querySelector('.future').textContent.replace(/\S/g, "<span>$&</span>");
-</script>
