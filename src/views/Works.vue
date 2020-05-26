@@ -7,12 +7,13 @@
 						.mouse
 							.wheel
 					h1.title
-						span Explore<br class="hidden-xs"> Kyushu
+						a(href="http://mag.joy.com.tw/" target="_blank")
+							span Explore<br class="hidden-xs"> Kyushu
 				.bn_bottom
 					p Kyushu is the third largest island of Japan and most southwesterly of its four main islands. The island is mountainous, and Japan's most active volcano. The historical regional name Saikaidō referred to its surrounding islands.
 			.bn(:class="{active: page === 1}")
 				.bn_top
-					label.bn_img
+					.bn_img
 						.mouse
 							.wheel
 					h1.title
