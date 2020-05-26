@@ -47,6 +47,6 @@
           this.theme = 'light';
         }
       }
-    }
+    } 
   }
 </script>
