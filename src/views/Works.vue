@@ -13,7 +13,7 @@
 			.bn(:class="{active: page === 1}")
 				.bn_top
 					.bn_img
-						video(src="../assets/images/works_joymag.mp4" loop)
+						video.hidden-xs(src="../assets/images/works_joymag.mp4" loop)
 						.mouse
 							.wheel
 					h1.title(@mouseover="videoStart" @mouseleave="videoPaused")
@@ -24,7 +24,7 @@
 			.bn(:class="{active: page === 2}")
 				.bn_top
 					.bn_img
-						video(src="../assets/images/works_joydrama.mp4" loop)
+						video.hidden-xs(src="../assets/images/works_joydrama.mp4" loop)
 						.mouse
 							.wheel
 					h1.title(@mouseover="videoStart" @mouseleave="videoPaused")
