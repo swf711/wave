@@ -1,6 +1,4 @@
 .works
-	*
-		// border: 1px solid #000
 	.pages
 		padding-top: 25px
 		height: calc(100vh - 100px)
@@ -14,19 +12,19 @@
 		height: 60vh
 		padding-left: 10%
 	.bn_img
-	  width: 100%
-	  height: 100%
-	  background-size: cover
-	  overflow: hidden
-	  &:after
-	    content: ""
-	    position: absolute
-	    right: 0
-	    width: 100%
-	    height: 100%
-	    transition: .8s cubic-bezier(.5,.74,.86,1.06)
-	  video
-	  	width: 100%
+		width: 100%
+		height: 100%
+		background-size: cover
+		overflow: hidden
+		&:after
+			content: ""
+			position: absolute
+			right: 0
+			width: 100%
+			height: 100%
+			transition: .8s cubic-bezier(.5,.74,.86,1.06)
+	video
+		width: 100%
 	.mouse
 		position: absolute
 		bottom: 10px
@@ -107,6 +105,8 @@
 @media (max-width: 1500px)
 	.works
 		padding: 0 10% 0 8%
+		.bn_top
+			height: 50vh
 
 @media (max-width: 1200px)
 	.works
@@ -117,6 +117,9 @@
 			padding: 0 10% 0 15%
 		.pagination
 			margin-left: 15%
+		video
+			width: auto
+			height: 100%
 
 @media (max-width: 991px)
 	.works
