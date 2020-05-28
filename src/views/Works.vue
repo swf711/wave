@@ -32,6 +32,28 @@
 							span Joy English<br class="hidden-xs"> Drama Club
 				.bn_bottom
 					p 佳音英語劇團官網 - 負責網站前端設計及製作<br>Joy English Drama Club official site - Web designing & Front-end develop<br>#GSAP #TweenMax #Bootstrap #Jquery #OwlCarousel #Fancybox #MagnificPopup
+			.bn(:class="{active: page === 3}")
+				.bn_top
+					.bn_img
+						video.hidden-xs(src="../assets/images/works_joycard.mp4" loop)
+						.mouse
+							.wheel
+					h1.title(@mouseover="videoStart" @mouseleave="videoPaused")
+						a(href="http://mag.joy.com.tw/" target="_blank")
+							span Greeting Card <br class="hidden-xs"> Generator
+				.bn_bottom
+					p 賀卡產生器活動網站(目前關閉) - 負責部分平面設計及網頁製作<br>Online Greeting Card Generator(Temporarily unavailable) - Web designing & develop<br>#FacebookAPI #Bootstrap #Jquery
+			.bn(:class="{active: page === 4}")
+				.bn_top
+					.bn_img
+						video.hidden-xs(src="../assets/images/works_joybag.mp4" loop)
+						.mouse
+							.wheel
+					h1.title(@mouseover="videoStart" @mouseleave="videoPaused")
+						a(href="http://mag.joy.com.tw/" target="_blank")
+							span Magical Schoolbag <br class="hidden-xs"> Game
+				.bn_bottom
+					p 神奇書包活動網站 - 負責部分平面設計及網頁製作<br>Kids interactive game site - Web designing & develop<br>#GSAP #TweenMax #Bootstrap #Jquery
 			.pagination
 				span 0{{page + 1}}
 				span |
