@@ -1,44 +1,83 @@
 <template lang="pug">
-	section.about
-		img.about-img(src="../assets/images/profile-image.jpg")
-		img.about-img-bd(src="../assets/images/profile-image-border.png")
+	section.contact
 		.content
-			.lg-title ABOUT
-
-			.intro
-				h1 Hi I’m 
-					span Brian Shao 
-					| !
-				h3 A web designer based in Taipei, Taiwan.<br>
-					| Focused on digital interactive experiences.<br>
-					| Love web & effect designing,<br>
-					| always trying to make <br>
-					| intresting interactive web page.
-
-			.experience
-				.title EXPERIENCE
-				p 資訊管理系畢業<br>
-					| BACHELOR IN INFORMATION MANAGEMENT
-					.sm-gray 2012 - 2016｜Fu Jen Catholic Unuversity
-				p 網路行銷企劃<br>
-					| INTERNET MARKETING PERSONNEL
-					.sm-gray 2016 - 2017｜你最大行銷公司
-				p 網頁設計師<br>
-					| WEB DESIGNER
-					.sm-gray 2017 - 2020｜佳音英語總公司
-
-			.skills
-				.title SKILLS
-				.row
-					.col-sm-6.col-12
-						p HTML5/CSS4/JS<br>Vue.js<br>jQuery<br>Node.js<br>Bootstrap/Material Design<br>Webpack<br>Pug/SASS<br>npm
-					.col-sm-6.col-12
-						p RWD<br>GIT<br>PHP<br>Photoshop<br>Illustrator<br>UX/UI
-
-			.future Continuously Expanding
-
+			h1 LET'S GET IN TOUCH !!!
+			h3 Thank you for visiting this site.<br>I’m based in Taiwan but always open to the world.<br>Feel free to contact me for an offer,<br>to have some tech discussion or just for some advice.
+			.profile
+				p Brian Shao
+				p Taipei, Taiwan
+				p 1994.07.11
+				p brian830711@gmail.com
+			.community
+				a(href="https://www.facebook.com/wave.shao" target="_blank") Facebook
+				a(href="https://www.instagram.com/swf711/" target="_blank") Instagram
+				a(href="https://codepen.io/swf711" target="_blank") CodePen
+		#particles
 </template>
 
 <script>
-		// document.querySelector('.future').innerHTML = document.querySelector('.future').textContent.replace(/\S/g, "<span>$&</span>");
+	import particles from 'particles.js'
+
+	export default {
+	  mounted(){
+	  	particlesJS('particles',{
+			  "particles": {
+			    "number": {
+			      "value": 20,
+			      "density": {
+			        "enable": true,
+			        "value_area": 900
+			      }
+			    },
+			    "shape": {
+			      "type": "image",
+			      "image": {
+			        "src": "https://res.cloudinary.com/swf711/image/upload/v1590909709/mail2_mkybfx.png",
+			        "width": 100,
+			        "height": 60
+			      }
+			    },
+			    "size": {
+			      "value": 30,
+			      "random": true,
+			    },
+			    "line_linked": {
+			      "enable": false,
+			    },
+			    "move": {
+			      "enable": true,
+			      "speed": 60,
+			      "direction": "none",
+			      "random": false,
+			      "straight": false,
+			      "out_mode": "out",
+			      "bounce": false,
+			      "attract": {
+			        "enable": false
+			      }
+			    }
+			  },
+			  "interactivity": {
+			    "detect_on": "canvas",
+			    "events": {
+			      "onhover": {
+			        "enable": true,
+			        "mode": "bubble"
+			      },
+			      "onclick": {
+			        "enable": false,
+			      },
+			      "resize": true
+			    },
+			    "modes": {
+			      "bubble": {
+			        "distance": 300,
+			        "size": 40
+			      }
+			    }
+			  },
+			  "retina_detect": true
+			});
+	  }
+	}
 </script>
