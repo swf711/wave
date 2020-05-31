@@ -19,6 +19,16 @@ export default {
     document.addEventListener('mousemove', this.moveCursor);
     
     const vm = this;
+
+    /*hold cursor*/
+    document.addEventListener('mousedown', function(){
+      vm.hover = true;
+    });
+    document.addEventListener('mouseup', function(){
+      vm.hover = false;
+    });
+
+    /*hover on link*/
     var hoverTargets = document.querySelectorAll('#app a, #app label');
     for (let target of hoverTargets) {
       target.addEventListener('mouseover', function(){
@@ -28,7 +38,6 @@ export default {
         vm.hover = false;
       });
     }
-    console.log(hoverTargets.length);
   },
   computed: {
     cursorPosition(){
@@ -53,8 +62,6 @@ export default {
           vm.hover = false;
         });
       }
-      console.log(hoverTargets.length);
-      console.log(hoverTargets);
     }
   }
 }
