@@ -83,21 +83,23 @@
 			  direction: Hammer.DIRECTION_ALL
 			});
 
-			mc.on("swipe", function(e) {
-			  if(e.type = "swipeleft" || "swipeup"){
-		      if(vm.page > 0){
-		      	vm.page--;
-		      }else{
-		      	vm.page = vm.maxPage - 1;
-		      }
-			  }else if(e.type = "swiperight" || "swipedown"){
-		      if(vm.page < vm.maxPage - 1){
-		      	vm.page++;
-		      }else{
-		      	vm.page = 0;
-		      }
-			  }
-			});
+			mc.on("swipeup", function(e){
+				if(vm.page < vm.maxPage - 1){
+					vm.page++;
+				}else{
+					vm.page = 0;
+				}
+				console.log('swipe up');
+			})
+
+			mc.on("swipedown", function(e){
+				if(vm.page > 0){
+					vm.page--;
+				}else{
+					vm.page = vm.maxPage - 1;
+				}
+				console.log('swipe down');
+			})
 	  },
 	  methods: {
 	  	wheelScroll: lodash.debounce(function(e){
