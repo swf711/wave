@@ -8,7 +8,22 @@
 
 ## 前端畫面
 
-![](https://res.cloudinary.com/swf711/image/upload/v1591266652/WAVE_ndwimk.png)
+![](https://res.cloudinary.com/swf711/image/upload/v1591354060/WAVE_all_hwevbp.png)
+
+## Vue Plugin
+
+* axios
+* vue-axios
+* vue-loader
+* vue-router
+* sass-loader
+* vue-cli-plugin-pug
+* bootstrap
+* hammerJS
+* lodash
+* popperJS
+* particleJS
+* fortawesome
 
 ## Project setup
 ```
